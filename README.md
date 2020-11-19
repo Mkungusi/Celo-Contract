@@ -1,2 +1,6 @@
-# Hello Celo
-A repo to get started with the exercise outline here: https://docs.celo.org/v/master/developer-guide/start/hellocelo
+<p align="center">
+  <a href="https://celo.org/">
+    <img src="https://i.imgur.com/fyrJi0R.png" alt="celo logo" title="Go to celo.org" width="600" style="border:none;"/>
+  </a>
+</p>
+
