@@ -1,0 +1,39 @@
+import { newKit } from '@celo/contractkit'
+import { CeloContract } from '@celo/contractkit'
+
+const kit = newKit('https://alfajores-forno.celo-testnet.org')
+
+let accounts = await kit.web3.eth.getAccounts()
+kit.defaultAccount = accounts[0]
+// paid gas in cUSD
+await kit.setFeeCurrency(CeloContract.StableToken)
+
+let totalBalance = await kit.getTotalBalance('0xD86518b29BB52a5DAC5991eACf09481CE4B0710d')
+
+let bytecode = '0x608060405234...' // compiled Solidity deployment bytecode
+
+let tx = await kit.sendTransaction({
+    data: bytecode
+})
+
+let receipt = tx.waitReceipt()
+console.log(receipt)
+
+
+// This is at lower price I will accept in cUSD for every CELO
+const favorableAmount = 100
+const amountToExchange = kit.web3.utils.toWei('10', 'ether')
+const oneGold = kit.web3.utils.toWei('1', 'ether')
+const exchange = await kit.contracts.getExchange()
+
+const amountOfcUsd = await exchange.quoteGoldSell(oneGold)
+
+if (amountOfcUsd > favorableAmount) {
+    const goldToken = await kit.contracts.getGoldToken()
+    const approveTx = await goldToken.approve(exchange.address, amountToExchange).send()
+    const approveReceipt = await approveTx.waitReceipt()
+
+    const usdAmount = await exchange.quoteGoldSell(amountToExchange)
+    const sellTx = await exchange.sellGold(amountToExchange, usdAmount).send()
+    const sellReceipt = await sellTx.waitReceipt()
+}
