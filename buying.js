@@ -8,7 +8,7 @@ kit.defaultAccount = accounts[0]
 // paid gas in cUSD
 await kit.setFeeCurrency(CeloContract.StableToken)
 
-let totalBalance = await kit.getTotalBalance(accounts.address)
+let totalBalance = await kit.getTotalBalance('0x5409ED021D9299bf6814279A6A1411A7e866A631')
 
 let bytecode = '0x608060405234...' // compiled Solidity deployment bytecode
 

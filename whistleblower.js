@@ -1,10 +1,8 @@
-//
-// Add package imports and setup here
-//
 
 // 1. Import ContractKit
 const ContractKit = require('@celo/contractkit')
-// 2. Init a new kit, connected to the alfajores testnet
+// 2. Init a new kit
+
 const kit = ContractKit.newKit('https://alfajores-forno.celo-testnet.org')
 //
 // Read Accounts
@@ -39,6 +37,8 @@ async function createAccount(){
     console.log(`Your account address: ${account.address}`)
     console.log(`Your account balance: ${balance.toString()}`)
 }
+
+
 
 //
 // Send Gold
