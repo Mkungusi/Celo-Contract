@@ -11,7 +11,7 @@ Secure recording of Whistle Blower info and sponsoring of the respective whistle
 
 Powerpoint Presentation link: https://docs.google.com/presentation/d/1WD5K6eIEQyXna7UlXwne7J_9PbaMmX822RsK02D_sdc/edit?usp=sharing
 
-Application video: https://youtu.be/UrFX8dbVLCk
+Application video: https://youtu.be/pLi6OtLEyfs
 
 React native app build during the Cello Hackathon Challange
 
