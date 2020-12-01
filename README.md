@@ -13,7 +13,7 @@ Powerpoint Presentation link: https://docs.google.com/presentation/d/1WD5K6eIEQy
 
 Application video: https://youtu.be/pLi6OtLEyfs
 
-React native app build during the Cello Hackathon Challange
+React native app build during the Cello Hackathon Challenge
 
 CONTRIBUTORS
 1. @Jeff Mkungusi
